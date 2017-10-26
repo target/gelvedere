@@ -104,7 +104,7 @@ The below example sends logs in the gelf format
 ### Install on Linux
 
 ```console
-curl -L https://github.com/target/gelvedere/releases/download/v0.1.0/gelvedere-linux-amd64.tar.gz | tar zx
+curl -L https://github.com/target/gelvedere/releases/download/v0.1.0/gelvedere-linux-amd64.tgz | tar zx
 
 sudo install -t /usr/local/bin gelvedere
 ```
@@ -112,7 +112,7 @@ sudo install -t /usr/local/bin gelvedere
 ### Install on macOS
 
 ```console
-curl -L https://github.com/target/gelvedere/releases/download/v0.1.0/gelvedere-darwin-amd64.tar.gz | tar zx
+curl -L https://github.com/target/gelvedere/releases/download/v0.1.0/gelvedere-darwin-amd64.tgz | tar zx
 
 sudo cp gelvedere /usr/local/bin/
 ```

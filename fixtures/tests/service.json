@@ -1,0 +1,89 @@
+[{
+    "ID": "fpd0u7ej7zpyr0vaolfoqqkjl",
+    "Version": {
+        "Index": 1424
+    },
+    "CreatedAt": "2017-10-09T21:06:44.099398103Z",
+    "UpdatedAt": "2017-10-09T21:06:44.101534456Z",
+    "Spec": {
+        "Name": "angry_goldstine",
+        "Labels": {},
+        "TaskTemplate": {
+            "ContainerSpec": {
+                "Image": "alpine:latest@sha256:f006ecbb824d87947d0b51ab8488634bf69fe4094959d935c0c103f4820a417d",
+                "Args": [
+                    "sleep",
+                    "3600"
+                ],
+                "StopGracePeriod": 10000000000,
+                "DNSConfig": {}
+            },
+            "Resources": {
+                "Limits": {},
+                "Reservations": {}
+            },
+            "RestartPolicy": {
+                "Condition": "any",
+                "Delay": 5000000000,
+                "MaxAttempts": 0
+            },
+            "Placement": {
+                "Platforms": [{
+                    "Architecture": "amd64",
+                    "OS": "linux"
+                }]
+            },
+            "ForceUpdate": 0,
+            "Runtime": "container"
+        },
+        "Mode": {
+            "Replicated": {
+                "Replicas": 1
+            }
+        },
+        "UpdateConfig": {
+            "Parallelism": 1,
+            "FailureAction": "pause",
+            "Monitor": 5000000000,
+            "MaxFailureRatio": 0,
+            "Order": "stop-first"
+        },
+        "RollbackConfig": {
+            "Parallelism": 1,
+            "FailureAction": "pause",
+            "Monitor": 5000000000,
+            "MaxFailureRatio": 0,
+            "Order": "stop-first"
+        },
+        "EndpointSpec": {
+            "Mode": "vip",
+            "Ports": [{
+                "Protocol": "tcp",
+                "TargetPort": 50789,
+                "PublishedPort": 50789,
+                "PublishMode": "ingress"
+            }]
+        }
+    },
+    "Endpoint": {
+        "Spec": {
+            "Mode": "vip",
+            "Ports": [{
+                "Protocol": "tcp",
+                "TargetPort": 50789,
+                "PublishedPort": 50789,
+                "PublishMode": "ingress"
+            }]
+        },
+        "Ports": [{
+            "Protocol": "tcp",
+            "TargetPort": 50789,
+            "PublishedPort": 50789,
+            "PublishMode": "ingress"
+        }],
+        "VirtualIPs": [{
+            "NetworkID": "t666nq4fwd1a22p1m69udefyn",
+            "Addr": "10.255.0.3/16"
+        }]
+    }
+}]

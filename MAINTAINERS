@@ -1,0 +1,18 @@
+
+{
+  "version": 1,
+  "file_format": "This MAINTAINERS file format is described at http://pup.pt/maintainers",
+  "issues": "https://github.com/target/gelvedere/issues",
+  "people": [
+    {
+      "github": "JordanSussman",
+      "email": "jordan.sussman@target.com",
+      "name": "Jordan Sussman"
+    },
+    {
+      "github": "jbrockopp",
+      "email": "Jordan.Brockopp@target.com",
+      "name": "Jordan Brockopp"
+    }
+  ]
+}

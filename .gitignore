@@ -2,3 +2,5 @@ release/*
 user.json
 admin.json
 .DS_Store
+gelvedere
+!cmd/gelvedere

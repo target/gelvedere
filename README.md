@@ -19,7 +19,7 @@ gelvedere provides a CLI for creating a Jenkins master within Docker swarm. Curr
 A sample command to run gelvedere:
 
 ```console
-$ gelvedere --user-config /jenkins/user-configs/test.json --admin-config /jenkins/admin-configs/test.json --domain acme.com 
+gelvedere --user-config /jenkins/user-configs/test.json --admin-config /jenkins/admin-configs/test.json --domain acme.com
 ```
 
 ### Input files

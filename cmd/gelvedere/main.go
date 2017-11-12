@@ -13,7 +13,7 @@ import (
 func main() {
 	app := cli.NewApp()
 	app.Version = version.Version.String()
-	app.Name = "gelvedere-cli"
+	app.Name = "gelvedere"
 	app.Action = run
 
 	app.Flags = []cli.Flag{

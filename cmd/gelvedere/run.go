@@ -147,7 +147,11 @@ func GetServiceSpec(uc *model.UserConfig, ac *model.AdminConfig, c *cli.Context)
 			}
 		}
 		if logconfig["tag"] == "" {
-			logconfig["tag"] = fmt.Sprintf("jenkins-%s-%s", ac.Region, uc.Name)
+			if ac.Region == "" {
+				logconfig["tag"] = fmt.Sprintf("jenkins-%s", uc.Name)
+			} else {
+				logconfig["tag"] = fmt.Sprintf("jenkins-%s-%s", ac.Region, uc.Name)
+			}
 		}
 		serviceSpec.TaskTemplate.LogDriver = &swarm.Driver{
 			Name:    ac.LogConfig["driver"],

@@ -1,7 +1,7 @@
 # gelvedere
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
-[![release](http://img.shields.io/github/release/target/gelvedere.svg)](https://github.com/target/gelvedere/releases/latest)
+[![release](https://img.shields.io/github/release/target/gelvedere.svg)](https://github.com/target/gelvedere/releases/latest)
 [![watch](https://img.shields.io/github/watchers/target/gelvedere.svg?style=social)](https://github.com/target/gelvedere/watchers)
 [![star](https://img.shields.io/github/stars/target/gelvedere.svg?style=social)](https://github.com/target/gelvedere/stargazers)
 
@@ -18,7 +18,7 @@ gelvedere provides a CLI for creating a Jenkins master within Docker swarm. Curr
 
 A sample command to run gelvedere:
 
-```console
+```bash
 gelvedere --user-config /jenkins/user-configs/test.json --admin-config /jenkins/admin-configs/test.json --domain acme.com
 ```
 
@@ -56,8 +56,8 @@ gelvedere makes the assumption that you are using local storage for each master,
 
 The below example will create a docker swarm service with a mount source of `/jenkins/stores` and a target of `/var/jenkins_home`.
 
-```console
-$ gelvedere --user-config /jenkins/user-configs/stores.json --admin-config /jenkins/admin-configs/stores.json --mount-path /jenkins/stores
+```shell
+gelvedere --user-config /jenkins/user-configs/stores.json --admin-config /jenkins/admin-configs/stores.json --mount-path /jenkins/stores
 ```
 
 ### Custom Environment Variables
@@ -95,7 +95,8 @@ The below example sends logs in the gelf format
 ```json
   "log_config": {
     "driver": "gelf",
-    "gelf-address": "udp://gelf.example.com:12201"
+    "gelf-address": "udp://gelf.example.com:12201",
+    "tag": "custom-tag"
   }
 ```
 
@@ -103,16 +104,16 @@ The below example sends logs in the gelf format
 
 ### Install on Linux
 
-```console
-curl -L https://github.com/target/gelvedere/releases/download/v0.1.0/gelvedere-linux-amd64.tgz | tar zx
+```bash
+curl -L https://github.com/target/gelvedere/releases/download/v0.1.2/gelvedere-linux-amd64.tgz | tar zx
 
 sudo install -t /usr/local/bin gelvedere
 ```
 
 ### Install on macOS
 
-```console
-curl -L https://github.com/target/gelvedere/releases/download/v0.1.0/gelvedere-darwin-amd64.tgz | tar zx
+```bash
+curl -L https://github.com/target/gelvedere/releases/download/v0.1.2/gelvedere-darwin-amd64.tgz | tar zx
 
 sudo cp gelvedere /usr/local/bin/
 ```

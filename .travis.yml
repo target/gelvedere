@@ -11,7 +11,7 @@ script:
       go vet
       go test -cover -coverprofile coverage.out
     done
-  - ./create.sh
+  - ls
 
 deploy:
   provider: releases

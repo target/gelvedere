@@ -1,18 +1,19 @@
 language: go
 
 go:
-- 1.9
+  - 1.9
 
 script:
-- |
-  for pkg in $(go list ./... | grep -v vendor)
-  do
-    cd $GOPATH/src/$pkg/
-    go vet
-    go test -cover -coverprofile coverage.out
-  done
+  - |
+    for pkg in $(go list ./... | grep -v vendor)
+    do
+      cd $GOPATH/src/$pkg/
+      go vet
+      go test -cover -coverprofile coverage.out
+    done
 
 before_deploy:
+  - cd $TRAVIS_BUILD_DIR
   - ./create.sh
 
 deploy:

@@ -11,7 +11,8 @@ script:
       go vet
       go test -cover -coverprofile coverage.out
     done
-  - ls
+  - cd $TRAVIS_BUILD_DIR
+  - ./create.sh
 
 deploy:
   provider: releases

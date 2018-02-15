@@ -1,5 +1,9 @@
 # gelvedere changelog
 
+## 0.1.3
+
+* Add travis ci testing and automated uploads
+
 ## 0.1.2
 
 * Validate that input files have required fields

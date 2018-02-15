@@ -1,0 +1,26 @@
+language: go
+
+go:
+- 1.9
+
+script:
+- |
+  for pkg in $(go list ./... | grep -v vendor)
+  do
+    cd $GOPATH/src/$pkg/
+    go vet
+    go test -cover -coverprofile coverage.out
+  done
+
+before_deploy:
+  - ./create.sh
+
+deploy:
+  provider: releases
+  api_key:
+    secure: GU/H9EfMRMyF1J+lQQpE8NlnWN56IxorQ7tjoBPYt903k5QJmmFPC6lVq22AxmbAHOMenWXJgi5T2rFKpZLW6mv4weecVAJF3aE0wNStboEb635fuEPeBuGDj5EMZFXaBihxfO/HTUFrQBiZ7rX901ryaqh9dGK/cJGt9Qrv2p4Y5N1UQlBP/J0k2RwGF7qT2f/TBd7tVTcSvS0Y/7mb0zCUitvT6njYPhUa10D9chd+Xut9fKs97aHBPWMUT/CMw1/a7/+IkOezvPeiBeaO0HXVMgqCaho7uiOMC8lS8qKPoVxuKsaQvGUx0vg0OkSoUvCth0ER3WdHiCO0IvQyLOq3b23hN68ZjjVo/Pkj95NXEKdJL4iGswwQkIiutSfoSaWUT0giT03GRXWPRQ3M8TiliLTeQXckArzmbkSdVVPOt9uWpzB77bVaAs94ZY8mjpU5GKXyJy/QbJ8bsnc9zBOw83r9+3e4irqF99+lNJFp1u92iPTZqzaoh0sGqsEbIYvv8UraSDaJGbjFlPD22/3Tz87jCSmUeSUmLfWa4CpUhc1tE0Ood7z3K4QpRvXrTK9HRn4ocWufcuzDj+zR+kvoM+R5/uc3d/TEITJyzO7FEYiyBEZscYCOzfw+WsGyQKd2H48TG53sO85uz1wQkK9DZ+TRgsS/5reFEMbaYB0=
+  file_glob: true
+  file: "*.tgz"
+  skip_cleanup: true
+  on:
+    tags: true

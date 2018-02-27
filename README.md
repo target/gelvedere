@@ -5,7 +5,7 @@
 [![watch](https://img.shields.io/github/watchers/target/gelvedere.svg?style=social)](https://github.com/target/gelvedere/watchers)
 [![star](https://img.shields.io/github/stars/target/gelvedere.svg?style=social)](https://github.com/target/gelvedere/stargazers)
 
-Cli to deploy a Jenkins master within the JAYS architecture
+Cli to deploy a Jenkins master within Docker Swarm
 
 ## How It Works
 
@@ -13,6 +13,8 @@ gelvedere provides a CLI for creating a Jenkins master within Docker swarm. Curr
 
 * `admin.json` - contains information specific to deploying the master within docker swarm
 * `user.json` - contains information specific to Jenkins ACL configuration
+
+More background information can be found at our blog post [here](https://target.github.io/beacon/2018/01/24/jays.html)
 
 ## Getting Started
 
@@ -30,8 +32,7 @@ A sample `user.json` file:
 {
   "name": "example",
   "admins": "target*Jenkins",
-  "members": "",
-  "team": "Jenkins"
+  "members": ""
 }
 ```
 

@@ -14,7 +14,7 @@ gelvedere provides a CLI for creating a Jenkins master within Docker swarm. Curr
 * `admin.json` - contains information specific to deploying the master within docker swarm
 * `user.json` - contains information specific to Jenkins ACL configuration
 
-More background information can be found at our blog post [here](https://target.github.io/beacon/2018/01/24/jays.html)
+More background information can be found at our blog post [here](https://tech.target.com/2018/01/24/jenkins.html)
 
 ## Getting Started
 
